@@ -184,6 +184,18 @@ showDialog(
 
 ---
 
+## 🌟 Built By
+
+Enjoyed this package? Check out the app we built it for 🚀
+
+<p align="center">
+  <a href="https://nutriscan.app/">
+    <img src="https://raw.githubusercontent.com/NesanSelvan/wiggle_kit/main/media/download-banner.png" alt="Download NutriScan" width="100%" height="150"/>
+  </a>
+</p>
+
+---
+
 ## 🤝 Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
