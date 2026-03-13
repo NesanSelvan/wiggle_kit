@@ -1,3 +1,7 @@
+## 1.0.4
+
+* Updated README with `hapticConfig` usage and correct installation version.
+
 ## 1.0.3
 
 * Added `hapticConfig` parameter via `WiggleHapticConfig` to trigger haptic feedback when a wiggle animation starts.

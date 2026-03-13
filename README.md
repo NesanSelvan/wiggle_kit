@@ -39,7 +39,8 @@
 - **Manual trigger** — fire the animation from anywhere with `WiggleController`
 - **Auto reset** — returns to original position after a finite animation ends
 - **Universal** — wraps any widget: buttons, icons, cards, dialogs, and more
-- **Zero dependencies** — only uses Flutter's built-in animation system
+- **Haptic feedback** — optionally pair any wiggle with a haptic tap via `WiggleHapticConfig`
+- **Zero config** — haptic is opt-in, existing usage is unchanged
 
 ---
 
@@ -49,7 +50,7 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  wiggle_kit: ^1.0.0
+  wiggle_kit: ^1.0.4
 ```
 
 Then run:
@@ -133,6 +134,21 @@ ElevatedButton(
 )
 ```
 
+### Haptic feedback
+
+Pair any wiggle with a haptic tap when the animation starts:
+
+```dart
+WiggleKit(
+  type: WiggleType.shake,
+  count: 3,
+  hapticConfig: WiggleHapticConfig(type: FeedbackType.heavy),
+  child: Icon(Icons.phone),
+)
+```
+
+Works with all 10 `FeedbackType` values from [`haptic_feedback_pro`](https://pub.dev/packages/haptic_feedback_pro): `light`, `medium`, `heavy`, `soft`, `rigid`, `success`, `warning`, `error`, `selection`, `vibration`. Omit `hapticConfig` to disable haptics entirely.
+
 ### Wrap a dialog
 
 ```dart
@@ -181,6 +197,7 @@ showDialog(
 | `amplitude` | `double` | `1.0` | Intensity multiplier |
 | `count` | `int?` | `null` | Cycle count — `null` means infinite |
 | `controller` | `WiggleController?` | `null` | Manual trigger — if provided, auto-start is disabled |
+| `hapticConfig` | `WiggleHapticConfig?` | `null` | Haptic feedback on animation start — omit to disable |
 
 ---
 
