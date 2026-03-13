@@ -1,3 +1,9 @@
+## 1.0.3
+
+* Added `hapticConfig` parameter via `WiggleHapticConfig` to trigger haptic feedback when a wiggle animation starts.
+* Supports all 10 `FeedbackType` values from `haptic_feedback_pro`: `light`, `medium`, `heavy`, `soft`, `rigid`, `success`, `warning`, `error`, `selection`, `vibration`.
+* Haptic is opt-in — omitting `hapticConfig` keeps existing behaviour unchanged.
+
 ## 1.0.2
 
 * Updated README section.
