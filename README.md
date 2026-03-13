@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎯 wiggle_kit
+# wiggle_kit
 
 **Add delightful wiggle animations to any Flutter widget in one line.**
 
@@ -13,20 +13,24 @@
 
 ---
 
-## Preview
+## 🎬 Preview
 
-### All wiggle types
-https://github.com/NesanSelvan/wiggle_kit/raw/main/media/1.mov
-
-### Amplitude & speed
-https://github.com/NesanSelvan/wiggle_kit/raw/main/media/2.mov
-
-### Tap to trigger
-https://github.com/NesanSelvan/wiggle_kit/raw/main/media/3.mov
+<table>
+  <tr>
+    <td align="center"><b>All wiggle types</b></td>
+    <td align="center"><b>Amplitude & speed</b></td>
+    <td align="center"><b>Tap to trigger</b></td>
+  </tr>
+  <tr>
+    <td><video src="media/1.mov" autoplay loop muted playsinline width="220"></video></td>
+    <td><video src="media/2.mov" autoplay loop muted playsinline width="220"></video></td>
+    <td><video src="media/3.mov" autoplay loop muted playsinline width="220"></video></td>
+  </tr>
+</table>
 
 ---
 
-## Features
+## ✨ Features
 
 - **7 animation types** — rotate, shake, bounce, pulse, swing, jello, spin
 - **Amplitude control** — dial up or down how intense the wiggle is
@@ -39,7 +43,7 @@ https://github.com/NesanSelvan/wiggle_kit/raw/main/media/3.mov
 
 ---
 
-## Installation
+## 📦 Installation
 
 Add to your `pubspec.yaml`:
 
@@ -56,7 +60,7 @@ flutter pub get
 
 ---
 
-## Quick start
+## 🚀 Quick start
 
 ```dart
 import 'package:wiggle_kit/wiggle_kit.dart';
@@ -69,7 +73,7 @@ WiggleKit(
 
 ---
 
-## Usage
+## 🛠️ Usage
 
 ### Infinite loop
 
@@ -115,7 +119,6 @@ WiggleKit(
 ```dart
 final _controller = WiggleController();
 
-// Attach to the widget
 WiggleKit(
   type: WiggleType.swing,
   count: 3,
@@ -154,7 +157,7 @@ showDialog(
 
 ---
 
-## Animation types
+## 🎭 Animation types
 
 | Type | Description |
 |------|-------------|
@@ -168,7 +171,7 @@ showDialog(
 
 ---
 
-## Parameters
+## ⚙️ Parameters
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
@@ -181,10 +184,10 @@ showDialog(
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you'd like to change.
 
-## License
+## 📄 License
 
 [MIT](LICENSE)
