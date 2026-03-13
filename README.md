@@ -22,9 +22,9 @@
     <td align="center"><b>Tap to trigger</b></td>
   </tr>
   <tr>
-    <td><img src="media/1.gif" width="220"/></td>
-    <td><img src="media/2.gif" width="220"/></td>
-    <td><img src="media/3.gif" width="220"/></td>
+    <td><img src="https://raw.githubusercontent.com/NesanSelvan/wiggle_kit/main/media/1.gif" width="220"/></td>
+    <td><img src="https://raw.githubusercontent.com/NesanSelvan/wiggle_kit/main/media/2.gif" width="220"/></td>
+    <td><img src="https://raw.githubusercontent.com/NesanSelvan/wiggle_kit/main/media/3.gif" width="220"/></td>
   </tr>
 </table>
 
