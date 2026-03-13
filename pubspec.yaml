@@ -1,6 +1,6 @@
 name: wiggle_kit
 description: "A Flutter widget that wraps any child with plug-and-play wiggle animations. Supports 7 animation types, amplitude, duration, repeat count, and a controller to trigger animations programmatically."
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/NesanSelvan/wiggle_kit
 
 environment:

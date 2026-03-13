@@ -1,3 +1,7 @@
+## 1.0.2
+
+* Updated README section.
+
 ## 1.0.1
 
 * Increased default amplitude for `rotate` type for a more visible wiggle out of the box.
