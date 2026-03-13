@@ -96,8 +96,8 @@ class _WiggleKitState extends State<WiggleKit>
     final a = widget.amplitude;
     _animation = switch (widget.type) {
       WiggleType.rotate => Tween(
-        begin: -0.05 * a,
-        end: 0.05 * a,
+        begin: -0.05 * a * 2.5,
+        end: 0.05 * a * 2.5,
       ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut)),
       WiggleType.spin => Tween(
         begin: 0.0,

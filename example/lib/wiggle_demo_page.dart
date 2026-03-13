@@ -93,6 +93,10 @@ class _WiggleDemoPageState extends State<WiggleDemoPage> {
                   children: [
                     WiggleKit(
                       type: type,
+                      duration: type == WiggleType.rotate
+                          ? const Duration(milliseconds: 80)
+                          : const Duration(milliseconds: 200),
+                      amplitude: type == WiggleType.rotate ? 2 : 1.0,
                       child: _IconWidget(
                         icon: m.icon,
                         color: m.color,
