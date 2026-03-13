@@ -22,9 +22,9 @@
     <td align="center"><b>Tap to trigger</b></td>
   </tr>
   <tr>
-    <td><video src="media/1.mov" autoplay loop muted playsinline width="220"></video></td>
-    <td><video src="media/2.mov" autoplay loop muted playsinline width="220"></video></td>
-    <td><video src="media/3.mov" autoplay loop muted playsinline width="220"></video></td>
+    <td><img src="media/1.gif" width="220"/></td>
+    <td><img src="media/2.gif" width="220"/></td>
+    <td><img src="media/3.gif" width="220"/></td>
   </tr>
 </table>
 
