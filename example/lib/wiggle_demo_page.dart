@@ -1,5 +1,6 @@
 import 'package:example/main.dart';
 import 'package:flutter/material.dart';
+import 'package:haptic_feedback_pro/haptic_feedback_pro.dart';
 import 'package:wiggle_kit/wiggle_kit.dart';
 
 class WiggleDemoPage extends StatefulWidget {
@@ -12,6 +13,21 @@ class WiggleDemoPage extends StatefulWidget {
 class _WiggleDemoPageState extends State<WiggleDemoPage> {
   final Map<WiggleType, WiggleController> _controllers = {
     for (final type in WiggleType.values) type: WiggleController(),
+  };
+
+  final Map<FeedbackType, WiggleController> _hapticControllers = {
+    for (final type in [
+      FeedbackType.light,
+      FeedbackType.medium,
+      FeedbackType.heavy,
+      FeedbackType.soft,
+      FeedbackType.rigid,
+      FeedbackType.success,
+      FeedbackType.warning,
+      FeedbackType.error,
+      FeedbackType.selection,
+    ])
+      type: WiggleController(),
   };
 
   static const _meta = {
@@ -276,11 +292,73 @@ class _WiggleDemoPageState extends State<WiggleDemoPage> {
             );
           }),
 
+          const SizedBox(height: 28),
+          const _SectionHeader('Haptic feedback · tap to feel'),
+          const SizedBox(height: 12),
+          ..._hapticControllers.entries.map((entry) {
+            final feedbackType = entry.key;
+            final controller = entry.value;
+            final (color, bg) = _hapticMeta[feedbackType]!;
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: _DemoCard(
+                child: Row(
+                  children: [
+                    WiggleKit(
+                      type: WiggleType.shake,
+                      count: 2,
+                      controller: controller,
+                      hapticConfig: WiggleHapticConfig(type: feedbackType),
+                      child: _IconWidget(
+                        icon: Icons.vibration_rounded,
+                        color: color,
+                        bg: bg,
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: Text(
+                        feedbackType.name,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    FilledButton.tonal(
+                      onPressed: controller.start,
+                      style: FilledButton.styleFrom(
+                        minimumSize: const Size(56, 34),
+                        padding: const EdgeInsets.symmetric(horizontal: 12),
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        backgroundColor: bg,
+                        foregroundColor: color,
+                      ),
+                      child: const Text('Play', style: TextStyle(fontSize: 13)),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          }),
+
           const SizedBox(height: 24),
         ],
       ),
     );
   }
+
+  static const _hapticMeta = {
+    FeedbackType.light: (Color(0xFF78909C), Color(0xFFECEFF1)),
+    FeedbackType.medium: (Color(0xFF42A5F5), Color(0xFFE3F2FD)),
+    FeedbackType.heavy: (Color(0xFF5C6BC0), Color(0xFFE8EAF6)),
+    FeedbackType.soft: (Color(0xFF26A69A), Color(0xFFE0F2F1)),
+    FeedbackType.rigid: (Color(0xFF7E57C2), Color(0xFFEDE7F6)),
+    FeedbackType.success: (Color(0xFF43A047), Color(0xFFE8F5E9)),
+    FeedbackType.warning: (Color(0xFFFB8C00), Color(0xFFFFF8E1)),
+    FeedbackType.error: (Color(0xFFE53935), Color(0xFFFFEBEE)),
+    FeedbackType.selection: (Color(0xFFF57C00), Color(0xFFFFF3E0)),
+  };
 
   void _showDialog(BuildContext context, WiggleType type) {
     final m = _meta[type]!;

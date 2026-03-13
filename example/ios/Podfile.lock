@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - haptic_feedback_pro (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - haptic_feedback_pro (from `.symlinks/plugins/haptic_feedback_pro/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  haptic_feedback_pro:
+    :path: ".symlinks/plugins/haptic_feedback_pro/ios"
+
+SPEC CHECKSUMS:
+  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
+  haptic_feedback_pro: c470f97d43a6a76ad9bd6c5a5595ce42ed6b4aef
+
+PODFILE CHECKSUM: 3c63482e143d1b91d2d2560aee9fb04ecc74ac7e
+
+COCOAPODS: 1.16.2

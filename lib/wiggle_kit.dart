@@ -1,8 +1,15 @@
 import 'dart:math';
 
 import 'package:flutter/widgets.dart';
+import 'package:haptic_feedback_pro/haptic_feedback_pro.dart';
 
 enum WiggleType { rotate, shake, bounce, pulse, swing, jello, spin }
+
+class WiggleHapticConfig {
+  const WiggleHapticConfig({this.type = FeedbackType.medium});
+
+  final FeedbackType type;
+}
 
 class WiggleController {
   _WiggleKitState? _state;
@@ -22,6 +29,7 @@ class WiggleKit extends StatefulWidget {
     this.count,
     this.controller,
     this.amplitude = 1.0,
+    this.hapticConfig,
   });
 
   final Widget child;
@@ -30,6 +38,7 @@ class WiggleKit extends StatefulWidget {
   final int? count;
   final WiggleController? controller;
   final double amplitude;
+  final WiggleHapticConfig? hapticConfig;
 
   @override
   State<WiggleKit> createState() => _WiggleKitState();
@@ -58,11 +67,18 @@ class _WiggleKitState extends State<WiggleKit>
     _cycleCount = 0;
     _controller.removeStatusListener(_onStatus);
     setState(() => _finished = false);
+    _triggerHaptic();
     if (widget.count == null) {
       _controller.repeat(reverse: widget.type != WiggleType.spin);
     } else {
       _controller.addStatusListener(_onStatus);
       _controller.forward();
+    }
+  }
+
+  void _triggerHaptic() {
+    if (widget.hapticConfig != null) {
+      HapticFeedbackPro.trigger(widget.hapticConfig!.type);
     }
   }
 
