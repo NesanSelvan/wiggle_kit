@@ -1,3 +1,6 @@
+## 1.0.5
+Updated haptic_feedback_pro version
+
 ## 1.0.4
 
 * Updated README with `hapticConfig` usage and correct installation version.
